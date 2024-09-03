@@ -41,13 +41,13 @@ on:
     outputs:
       prevtag:
         description: "previous SemVer"
-        value: ${{ env.PREV_TAG_V }}
+        value: ${{ steps.final-output.outputs.PREV_TAG_V }}
       vsemver:
         description: "the next v SemVer"
-        value: ${{ env.RELEASE_TAG_V}}
+        value: ${{ steps.final-output.outputs.RELEASE_TAG_V}}
       semver:
         description: "the next SemVer output"
-        value: ${{ env.RELEASE_TAG }}
+        value: ${{ steps.final-output.outputs.RELEASE_TAG }}
 
 env:
   RELEASE_TAG: latest      # will be set later
@@ -115,6 +115,7 @@ jobs:
           echo "RELEASE_TAG_V=${{ steps.semvers.outputs.v_patch }}" >> $GITHUB_ENV
 
       - name: output
+        id: final-output
         run: |
           echo "RELEASE_TAG: ${{ env.RELEASE_TAG }}"
           echo "RELEASE_TAG=$(echo ${{ env.RELEASE_TAG }})" >> $GITHUB_OUTPUT
