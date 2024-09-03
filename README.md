@@ -2,6 +2,18 @@
 
 GitHub Action that output the next version for major, minor, and patch version based on the given semver version.
 
+
+
+<!-- START doctoc -->
+<!-- END doctoc -->
+
+
+
+## brief
+
+Github Action and Workflow to get previous tag / version and nest version (optional: based on parameter. See Example 1)
+
+
 ![Example output showing this action in action](images/output.png)
 
 ## Options
@@ -46,7 +58,42 @@ In addition, if your input contains an indicator that it is a pre-release (e.g.,
 * `v_patch`: `v1.2.3`
 
 
-## Example
+## Examples
+
+### Example 1
+
+[![call wf get next SemVer](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo_call_repo-get_next_version.yml/badge.svg)](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo_call_repo-get_next_version.yml)
+
+```yaml
+name: call sub workflow - get next SemVer
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: "Call other workflow"
+    uses: Zheng-Bote/gha-next-semvers/.github/workflows/repo-get_next_version.yml@master
+    with:
+      Major: false
+      Minor: true
+      Patch: false
+  
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Print my_var"
+        run: |
+          echo "prevtag: ${{needs.job1.outputs.prevtag}}"
+          echo "vsemver: ${{needs.job1.outputs.vsemver}}"
+          echo "semver: ${{needs.job1.outputs.semver}}"
+```
+
+
+
+### Example 2
+
 
 The following example works together with the [`WyriHaximus/github-action-get-previous-tag`](https://github.com/marketplace/actions/get-latest-tag)
 and [`WyriHaximus/github-action-create-milestone`](https://github.com/marketplace/actions/create-milestone) actions.
