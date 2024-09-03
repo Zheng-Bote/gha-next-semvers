@@ -4,8 +4,21 @@ GitHub Action that output the next version for major, minor, and patch version b
 
 
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [brief](#brief)
+- [Options](#options)
+  - [version](#version)
+  - [strict](#strict)
+- [Output](#output)
+- [Examples](#examples)
+  - [Example 1](#example-1)
+  - [Example 2](#example-2)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 
