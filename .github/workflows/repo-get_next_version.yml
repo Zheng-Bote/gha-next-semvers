@@ -1,0 +1,71 @@
+name: Repo - get next SemVer
+
+run-name: get next SemVer by ${{ github.actor }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      Major:
+        description: next SemVer is a Major
+        type: boolean
+        required: true
+        default: false
+      Minor:
+        description: next SemVer is a Minor
+        type: boolean
+        required: true
+        default: false
+      Patch:
+        description: next SemVer is a Patch
+        type: boolean
+        required: true
+        default: false
+  workflow_call:
+    inputs:
+      Major:
+        description: next SemVer is a Mayor
+        type: boolean
+        required: true
+        default: false
+      Minor:
+        description: next SemVer is a Minor
+        type: boolean
+        required: true
+        default: false
+      Patch:
+        description: next SemVer is a Patch
+        type: boolean
+        required: true
+        default: false
+
+jobs:
+  generate-SemVer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: 'Get Previous tag'
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Previous tag
+        shell: bash
+        run: |
+          echo "prev tag: ${{ steps.previoustag.outputs.tag }}"
+        
+      - name: "Get next version"
+        id: semvers
+        uses: "WyriHaximus/github-action-next-semvers@v1"
+        with:
+          version: ${{ steps.previoustag.outputs.tag }}
+
+      - name: Next possible tag
+        shell: bash
+        run: |
+          echo "- MAJOR: ${{ steps.semvers.outputs.v_major }} | ${{ steps.semvers.outputs.major }}"
+          echo "- MINOR: ${{ steps.semvers.outputs.v_minor }} | ${{ steps.semvers.outputs.minor }}"
+          echo "- PATCH: ${{ steps.semvers.outputs.v_patch }} | ${{ steps.semvers.outputs.patch }}"
+
+
