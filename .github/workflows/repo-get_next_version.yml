@@ -40,13 +40,13 @@ on:
     outputs:
       prevtag:
         description: "previous SemVer"
-        value: ${{ steps.final-output.outputs.PREV_TAG_V }}
+        value: ${{ jobs.generate-SemVer.outputs.PREV_TAG_V }}
       vsemver:
         description: "the next v SemVer"
-        value: ${{ steps.final-output.outputs.RELEASE_TAG_V}}
+        value: ${{ jobs.generate-SemVer.outputs.RELEASE_TAG_V}}
       semver:
         description: "the next SemVer output"
-        value: ${{ steps.final-output.outputs.RELEASE_TAG }}
+        value: ${{ jobs.generate-SemVer.outputs.RELEASE_TAG }}
 
 env:
   RELEASE_TAG: latest      # will be set later
@@ -56,6 +56,11 @@ env:
 jobs:
   generate-SemVer:
     runs-on: ubuntu-latest
+    outputs:
+      PREV_TAG_V: ${{ steps.final-output.outputs.PREV_TAG_V }}
+      RELEASE_TAG_V: ${{ steps.final-output.outputs.RELEASE_TAG_V}}
+      RELEASE_TAG:  ${{ steps.final-output.outputs.RELEASE_TAG }}
+        
     steps:
       - name: add Summary item
         run: |
