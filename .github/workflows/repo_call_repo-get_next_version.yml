@@ -1,0 +1,17 @@
+name: call wf get next SemVer
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: "Call other workflow"
+    uses: Zheng-Bote/gha-next-semver/.github/workflows/repo-get_next_version.yml@main
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Print my_var"
+        run: |
+          echo "prevtag: ${{needs.job1.outputs.prevtag}}"
+          echo "vsemver: ${{needs.job1.outputs.vsemver}}"
