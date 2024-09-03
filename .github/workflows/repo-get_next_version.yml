@@ -41,7 +41,7 @@ on:
     outputs:
       prevtag:
         description: "previous SemVer"
-        value: ${{ steps.previoustag.outputs.tag }}
+        value: ${{ env.PREV_TAG_V }}
       vsemver:
         description: "the next v SemVer"
         value: ${{ env.RELEASE_TAG_V}}
@@ -52,6 +52,7 @@ on:
 env:
   RELEASE_TAG: latest      # will be set later
   RELEASE_TAG_V: v0.0.0    # will be set later
+  PREV_TAG_V: v0.0.0       # will be set later
   
 jobs:
   generate-SemVer:
@@ -74,6 +75,7 @@ jobs:
       - name: add Summary item
         run: |
           echo "- previous version: ${{ steps.previoustag.outputs.tag }}" >> $GITHUB_STEP_SUMMARY
+          echo "PREV_TAG_V=${{ steps.previoustag.outputs.tag }}" >> $GITHUB_ENV
         
       - name: "Get next version"
         id: semvers
