@@ -9,6 +9,9 @@ run-name: create README table of contents by ${{ github.actor }}
 
 on: 
   workflow_dispatch:
+  push:
+    paths:
+      - './README.md'
 
 permissions:
   contents: write
