@@ -38,10 +38,17 @@ on:
         required: true
         default: false
 
+env:
+  RELEASE_TAG: latest # will be set later
+  
 jobs:
   generate-SemVer:
     runs-on: ubuntu-latest
     steps:
+      - name: add Summary item
+        run: |
+          echo "***get next SemVer***" >> $GITHUB_STEP_SUMMARY
+          
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -52,10 +59,9 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Previous tag
-        shell: bash
+      - name: add Summary item
         run: |
-          echo "prev tag: ${{ steps.previoustag.outputs.tag }}"
+          echo "- previous version: ${{ steps.previoustag.outputs.tag }}" >> $GITHUB_STEP_SUMMARY
         
       - name: "Get next version"
         id: semvers
@@ -69,5 +75,30 @@ jobs:
           echo "- MAJOR: ${{ steps.semvers.outputs.v_major }} | ${{ steps.semvers.outputs.major }}"
           echo "- MINOR: ${{ steps.semvers.outputs.v_minor }} | ${{ steps.semvers.outputs.minor }}"
           echo "- PATCH: ${{ steps.semvers.outputs.v_patch }} | ${{ steps.semvers.outputs.patch }}"
+
+      - name: isMajor
+        id: is-major
+        if: ${{ inputs.Major == true }}
+        run: |
+          echo "- new version: ${{ steps.semvers.outputs.v_major }} | ${{ steps.semvers.outputs.major }}" >> $GITHUB_STEP_SUMMARY
+          echo "RELEASE_TAG=${{ steps.semvers.outputs.major }}" >> $GITHUB_ENV
+
+      - name: isMinor
+        id: is-minor
+        if: ${{ inputs.Minor == true }}
+        run: |
+          echo "- new version: ${{ steps.semvers.outputs.v_minor }} | ${{ steps.semvers.outputs.minor }}" >> $GITHUB_STEP_SUMMARY
+          echo "RELEASE_TAG=${{ steps.semvers.outputs.minor }}" >> $GITHUB_ENV
+
+      - name: isPatch
+        id: is-patch
+        if: ${{ inputs.Patch == true }}
+        run: |
+          echo "- new version: ${{ steps.semvers.outputs.v_patch }} | ${{ steps.semvers.outputs.patch }}" >> $GITHUB_STEP_SUMMARY
+          echo "RELEASE_TAG=${{ steps.semvers.outputs.patch }}" >> $GITHUB_ENV
+
+      - name: output
+        run: |
+          echo "RELEASE_TAG: ${{ env.RELEASE_TAG }}"
 
 
