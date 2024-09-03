@@ -38,8 +38,20 @@ on:
         required: true
         default: false
 
+    outputs:
+      prevtag:
+        description: "previous SemVer"
+        value: ${{ steps.previoustag.outputs.tag }}
+      vsemver:
+        description: "the next v SemVer"
+        value: ${{ env.RELEASE_TAG_V}}
+      semver:
+        description: "the next SemVer output"
+        value: ${{ env.RELEASE_TAG }}
+
 env:
-  RELEASE_TAG: latest # will be set later
+  RELEASE_TAG: latest      # will be set later
+  RELEASE_TAG_V: v0.0.0    # will be set later
   
 jobs:
   generate-SemVer:
@@ -82,6 +94,7 @@ jobs:
         run: |
           echo "- new version: ${{ steps.semvers.outputs.v_major }} | ${{ steps.semvers.outputs.major }}" >> $GITHUB_STEP_SUMMARY
           echo "RELEASE_TAG=${{ steps.semvers.outputs.major }}" >> $GITHUB_ENV
+          echo "RELEASE_TAG_V=${{ steps.semvers.outputs.v_major }}" >> $GITHUB_ENV
 
       - name: isMinor
         id: is-minor
@@ -89,6 +102,7 @@ jobs:
         run: |
           echo "- new version: ${{ steps.semvers.outputs.v_minor }} | ${{ steps.semvers.outputs.minor }}" >> $GITHUB_STEP_SUMMARY
           echo "RELEASE_TAG=${{ steps.semvers.outputs.minor }}" >> $GITHUB_ENV
+          echo "RELEASE_TAG_V=${{ steps.semvers.outputs.v_minor }}" >> $GITHUB_ENV
 
       - name: isPatch
         id: is-patch
@@ -96,6 +110,7 @@ jobs:
         run: |
           echo "- new version: ${{ steps.semvers.outputs.v_patch }} | ${{ steps.semvers.outputs.patch }}" >> $GITHUB_STEP_SUMMARY
           echo "RELEASE_TAG=${{ steps.semvers.outputs.patch }}" >> $GITHUB_ENV
+          echo "RELEASE_TAG_V=${{ steps.semvers.outputs.v_patch }}" >> $GITHUB_ENV
 
       - name: output
         run: |
