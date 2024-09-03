@@ -6,7 +6,7 @@ on:
 jobs:
   job1:
     name: "Call other workflow"
-    uses: Zheng-Bote/gha-next-semvers/.github/workflows/repo-get_next_version.yml@main
+    uses: Zheng-Bote/gha-next-semvers/blob/master/.github/workflows/repo-get_next_version.yml@main
     with:
       Major: false
       Minor: true
