@@ -3,6 +3,11 @@
 GitHub Action that output the next version for major, minor, and patch version based on the given semver version.
 
 
+## Brief
+
+Github Action and Workflow to get previous tag / version and nest version (optional: based on parameter. See Example 1)
+
+
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -22,9 +27,11 @@ GitHub Action that output the next version for major, minor, and patch version b
 
 
 
-## brief
+## Description
 
-Github Action and Workflow to get previous tag / version and nest version (optional: based on parameter. See Example 1)
+- GitHub Action that output the next version for major, minor, and patch version based on the given semver version.
+
+- Github Action and Workflow to get previous tag / next version based on parameter Major|Minor|Patch. See Example 1
 
 
 ![Example output showing this action in action](images/output.png)
