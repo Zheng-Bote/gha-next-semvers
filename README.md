@@ -13,7 +13,7 @@ Github Action and Workflow to get previous tag / version and nest version (optio
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [brief](#brief)
+- [Description](#description)
 - [Options](#options)
   - [version](#version)
   - [strict](#strict)
