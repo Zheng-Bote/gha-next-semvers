@@ -21,7 +21,7 @@ jobs:
     name: TOC Generator
     runs-on: ubuntu-latest
     steps:
-      - uses: Zheng-Bote/gha-toc-generator@v4.3.2
+      - uses: Zheng-Bote/gha-toc-generator@v4.3.3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TARGET_PATHS: ./README.md
