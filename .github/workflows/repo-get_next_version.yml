@@ -1,6 +1,11 @@
 name: Repo - get next SemVer
-
+# description: get next SemVer. Action-Source: https://github.com/WyriHaximus/github-action-next-semvers
 run-name: get next SemVer by ${{ github.actor }}
+
+env:
+  RELEASE_TAG: latest      # will be set later
+  RELEASE_TAG_V: v0.0.0    # will be set later
+  PREV_TAG_V: v0.0.0       # will be set later
 
 on:
   workflow_dispatch:
@@ -48,11 +53,6 @@ on:
       semver:
         description: "the next SemVer output"
         value: ${{ env.RELEASE_TAG }}
-
-env:
-  RELEASE_TAG: latest      # will be set later
-  RELEASE_TAG_V: v0.0.0    # will be set later
-  PREV_TAG_V: v0.0.0       # will be set later
   
 jobs:
   generate-SemVer:
