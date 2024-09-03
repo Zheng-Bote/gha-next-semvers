@@ -6,7 +6,12 @@ on:
 jobs:
   job1:
     name: "Call other workflow"
-    uses: Zheng-Bote/gha-next-semver/.github/workflows/repo-get_next_version.yml@main
+    uses: Zheng-Bote/gha-next-semvers/.github/workflows/repo-get_next_version.yml@main
+    with:
+      Major: false
+      Minor: true
+      Patch: false
+  
   job2:
     needs: job1
     runs-on: ubuntu-latest
