@@ -37,7 +37,6 @@ on:
         type: boolean
         required: true
         default: false
-
     outputs:
       prevtag:
         description: "previous SemVer"
@@ -121,5 +120,6 @@ jobs:
           echo "RELEASE_TAG=$(echo ${{ env.RELEASE_TAG }})" >> $GITHUB_OUTPUT
           echo "RELEASE_TAG_V=$(echo ${{ env.RELEASE_TAG_V }})" >> $GITHUB_OUTPUT
           echo "PREV_TAG_V=$(echo ${{ env.PREV_TAG_V }})" >> $GITHUB_OUTPUT
-
+        
+    
 
