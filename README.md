@@ -144,7 +144,8 @@ In addition, if your input contains an indicator that it is a pre-release (e.g.,
         value: ${{ jobs.generate-SemVer.outputs.RELEASE_TAG }}
 ```
 
-**_generate-SemVer summary_**
+**generate-SemVer summary**
+
 _get next SemVer_
 
 -   previous version: v1.0.0
