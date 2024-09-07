@@ -182,7 +182,29 @@ jobs:
 
 ## Inputs
 
+<!-- AUTO-DOC-INPUT:START - Do not remove or modify this section -->
+
+|                         INPUT                         |  TYPE  | REQUIRED | DEFAULT  |                                                      DESCRIPTION                                                      |
+|-------------------------------------------------------|--------|----------|----------|-----------------------------------------------------------------------------------------------------------------------|
+|  <a name="input_strict"></a>[strict](#input_strict)   | string |  false   | `"true"` | Strict version validation, when turned <br>off, the version is suffixed <br>with `.0` until it contains <br>3 x `.`.  |
+| <a name="input_version"></a>[version](#input_version) | string |   true   |          |                                                   A SemVer version                                                    |
+
+<!-- AUTO-DOC-INPUT:END -->
+
 ## Outputs
+
+<!-- AUTO-DOC-OUTPUT:START - Do not remove or modify this section -->
+
+|                         OUTPUT                          |  TYPE  |              DESCRIPTION              |
+|---------------------------------------------------------|--------|---------------------------------------|
+|    <a name="output_major"></a>[major](#output_major)    | string |          Next Major Version           |
+|    <a name="output_minor"></a>[minor](#output_minor)    | string |          Next Minor Version           |
+|    <a name="output_patch"></a>[patch](#output_patch)    | string |          Next Patch Version           |
+| <a name="output_v_major"></a>[v_major](#output_v_major) | string | Next Major Version (prefixed with v)  |
+| <a name="output_v_minor"></a>[v_minor](#output_v_minor) | string | Next Minor Version (prefixed with v)  |
+| <a name="output_v_patch"></a>[v_patch](#output_v_patch) | string | Next Patch Version (prefixed with v)  |
+
+<!-- AUTO-DOC-OUTPUT:END -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
