@@ -8,7 +8,7 @@ run-name: render actions.yml Inputs/Outputs to README tables by ${{ github.actor
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
     paths:
       - "action.yml"
   workflow_dispatch:

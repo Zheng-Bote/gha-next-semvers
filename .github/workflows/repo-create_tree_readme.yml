@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - master
     paths:
       - "src/**"
       - ".github/**"
@@ -50,7 +50,7 @@ jobs:
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: "main"
+          push-branch: "master"
           commit-message: "appended by Github Actions"
           force-add: "true"
           files: README.md
