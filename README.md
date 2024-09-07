@@ -184,7 +184,54 @@ jobs:
 ## folder structure
 
 <!-- readme-tree start -->
+```
+.
+├── .editorconfig
+├── .gitattributes
+├── .github
+│   ├── CODEOWNERS
+│   ├── FUNDING.yml
+│   ├── boring-cyborg.yml
+│   ├── dependabot.yml
+│   ├── settings.yml
+│   └── workflows
+│       ├── ci.yml
+│       ├── craft-release.yaml
+│       ├── repo-actions_docu.yml
+│       ├── repo-create_toc.yml
+│       ├── repo-create_tree_readme.yml
+│       ├── repo-get_next_version.yml
+│       ├── repo_call_repo-get_next_version.yml
+│       └── set-milestone-on-pr.yaml
+├── .gitignore
+├── .php_cs
+├── .scrutinizer.yml
+├── CONTRIBUTING.md
+├── Dockerfile
+├── Dockerfile-build
+├── LICENSE
+├── Makefile
+├── README.md
+├── action.yml
+├── composer-require-checker.json
+├── composer.json
+├── composer.lock
+├── images
+│   └── output.png
+├── infection.json.dist
+├── next.php
+├── phpcs.xml.dist
+├── phpstan.neon
+├── phpunit.xml.dist
+├── psalm.xml
+├── src
+│   └── Next.php
+├── tests
+│   └── NextTest.php
+└── tree.bak
 
+5 directories, 38 files
+```
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
