@@ -19,18 +19,24 @@ Github Action and Workflow to get previous tag / version and next (SemVer) versi
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 **Table of Contents**
 
--   [Description](#description)
--   [Options](#options)
-    -   [version](#version)
-    -   [strict](#strict)
--   [Output](#output)
--   [Examples](#examples)
-    -   [Example 1](#example-1)
-    -   [Example 2](#example-2)
--   [License](#license)
+  - [Description](#description)
+  - [Status](#status)
+  - [Options](#options)
+    - [version](#version)
+    - [strict](#strict)
+  - [Output](#output)
+  - [Examples](#examples)
+    - [Example 1](#example-1)
+    - [Example 2](#example-2)
+- [Parameters](#parameters)
+  - [Inputs](#inputs)
+  - [Outputs](#outputs)
+  - [Outputs](#outputs-1)
+  - [folder structure](#folder-structure)
+  - [License](#license)
+    - [Code Contributors](#code-contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
