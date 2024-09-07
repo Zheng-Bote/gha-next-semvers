@@ -210,7 +210,6 @@ jobs:
 ## folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .editorconfig
@@ -259,7 +258,6 @@ jobs:
 
 5 directories, 38 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
