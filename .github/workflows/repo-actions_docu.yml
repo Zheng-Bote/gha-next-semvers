@@ -39,14 +39,14 @@ jobs:
         if: steps.verify_changed_files.outputs.files_changed == 'false'
         run: |
           echo "README.md has no uncommitted changes"
-          exit 1
+          #exit 1
 
       - name: commit and push
         if: steps.verify_changed_files.outputs.files_changed == 'true'
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: "main"
+          push-branch: "master"
           commit-message: "appended by Github Actions"
           force-add: "true"
           files: README.md
