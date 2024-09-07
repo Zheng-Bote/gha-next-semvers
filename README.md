@@ -171,19 +171,20 @@ jobs:
                   GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 ```
 
-## Parameters
+# Parameters
 
 <!-- only for actions repo -->
 
-### Inputs -->
+## Inputs -->
 
-### Outputs -->
+## Outputs -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .editorconfig
@@ -232,6 +233,7 @@ jobs:
 
 5 directories, 38 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
