@@ -1,4 +1,4 @@
-name: create TOC
+name: Repo - create TOC
 # description: https://github.com/technote-space/toc-generator
 
 # README.md:
@@ -7,11 +7,11 @@ name: create TOC
 
 run-name: create README table of contents by ${{ github.actor }}
 
-on: 
+on:
   workflow_dispatch:
   push:
     paths:
-      - './README.md'
+      - "./README.md"
 
 permissions:
   contents: write
