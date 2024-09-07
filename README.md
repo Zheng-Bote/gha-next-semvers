@@ -19,23 +19,24 @@ Github Action and Workflow to get previous tag / version and next (SemVer) versi
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
-  - [Description](#description)
-  - [Status](#status)
-  - [Options](#options)
-    - [version](#version)
-    - [strict](#strict)
-  - [Output](#output)
-  - [Examples](#examples)
-    - [Example 1](#example-1)
-    - [Example 2](#example-2)
-- [Parameters](#parameters)
-  - [Inputs](#inputs)
-  - [Outputs](#outputs)
-- [Folder structure](#folder-structure)
-- [License](#license)
-  - [Code Contributors](#code-contributors)
+-   [Description](#description)
+-   [Status](#status)
+-   [Options](#options)
+    -   [version](#version)
+    -   [strict](#strict)
+-   [Output](#output)
+-   [Examples](#examples)
+    -   [Example 1](#example-1)
+    -   [Example 2](#example-2)
+-   [Parameters](#parameters)
+    -   [Inputs](#inputs)
+    -   [Outputs](#outputs)
+-   [Folder structure](#folder-structure)
+-   [License](#license)
+    -   [Code Contributors](#code-contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -114,7 +115,40 @@ In addition, if your input contains an indicator that it is a pre-release (e.g.,
 
 ```Shell
 .github/workflows/repo-get_next_version.yml
+
+    inputs:
+      Major:
+        description: next SemVer is a Mayor
+        type: boolean
+        required: true
+        default: false
+      Minor:
+        description: next SemVer is a Minor
+        type: boolean
+        required: true
+        default: false
+      Patch:
+        description: next SemVer is a Patch
+        type: boolean
+        required: true
+        default: false
+    outputs:
+      prevtag:
+        description: "previous SemVer"
+        value: ${{ jobs.generate-SemVer.outputs.PREV_TAG_V }}
+      vsemver:
+        description: "the next v SemVer"
+        value: ${{ jobs.generate-SemVer.outputs.RELEASE_TAG_V}}
+      semver:
+        description: "the next SemVer output"
+        value: ${{ jobs.generate-SemVer.outputs.RELEASE_TAG }}
 ```
+
+**_generate-SemVer summary_**
+_get next SemVer_
+
+-   previous version: v1.0.0
+-   new version: v1.1.0 | 1.1.0
 
 [![call wf get next SemVer](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo_call_repo-get_next_version.yml/badge.svg)](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo_call_repo-get_next_version.yml)
 
@@ -184,10 +218,10 @@ jobs:
 
 <!-- AUTO-DOC-INPUT:START - Do not remove or modify this section -->
 
-|                         INPUT                         |  TYPE  | REQUIRED | DEFAULT  |                                                      DESCRIPTION                                                      |
-|-------------------------------------------------------|--------|----------|----------|-----------------------------------------------------------------------------------------------------------------------|
-|  <a name="input_strict"></a>[strict](#input_strict)   | string |  false   | `"true"` | Strict version validation, when turned <br>off, the version is suffixed <br>with `.0` until it contains <br>3 x `.`.  |
-| <a name="input_version"></a>[version](#input_version) | string |   true   |          |                                                   A SemVer version                                                    |
+| INPUT                                                 | TYPE   | REQUIRED | DEFAULT  | DESCRIPTION                                                                                                          |
+| ----------------------------------------------------- | ------ | -------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| <a name="input_strict"></a>[strict](#input_strict)    | string | false    | `"true"` | Strict version validation, when turned <br>off, the version is suffixed <br>with `.0` until it contains <br>3 x `.`. |
+| <a name="input_version"></a>[version](#input_version) | string | true     |          | A SemVer version                                                                                                     |
 
 <!-- AUTO-DOC-INPUT:END -->
 
@@ -195,14 +229,14 @@ jobs:
 
 <!-- AUTO-DOC-OUTPUT:START - Do not remove or modify this section -->
 
-|                         OUTPUT                          |  TYPE  |              DESCRIPTION              |
-|---------------------------------------------------------|--------|---------------------------------------|
-|    <a name="output_major"></a>[major](#output_major)    | string |          Next Major Version           |
-|    <a name="output_minor"></a>[minor](#output_minor)    | string |          Next Minor Version           |
-|    <a name="output_patch"></a>[patch](#output_patch)    | string |          Next Patch Version           |
-| <a name="output_v_major"></a>[v_major](#output_v_major) | string | Next Major Version (prefixed with v)  |
-| <a name="output_v_minor"></a>[v_minor](#output_v_minor) | string | Next Minor Version (prefixed with v)  |
-| <a name="output_v_patch"></a>[v_patch](#output_v_patch) | string | Next Patch Version (prefixed with v)  |
+| OUTPUT                                                  | TYPE   | DESCRIPTION                          |
+| ------------------------------------------------------- | ------ | ------------------------------------ |
+| <a name="output_major"></a>[major](#output_major)       | string | Next Major Version                   |
+| <a name="output_minor"></a>[minor](#output_minor)       | string | Next Minor Version                   |
+| <a name="output_patch"></a>[patch](#output_patch)       | string | Next Patch Version                   |
+| <a name="output_v_major"></a>[v_major](#output_v_major) | string | Next Major Version (prefixed with v) |
+| <a name="output_v_minor"></a>[v_minor](#output_v_minor) | string | Next Minor Version (prefixed with v) |
+| <a name="output_v_patch"></a>[v_patch](#output_v_patch) | string | Next Patch Version (prefixed with v) |
 
 <!-- AUTO-DOC-OUTPUT:END -->
 
