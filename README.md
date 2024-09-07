@@ -34,9 +34,9 @@ Github Action and Workflow to get previous tag / version and next (SemVer) versi
   - [Inputs](#inputs)
   - [Outputs](#outputs)
   - [Outputs](#outputs-1)
-  - [folder structure](#folder-structure)
-  - [License](#license)
-    - [Code Contributors](#code-contributors)
+- [folder structure](#folder-structure)
+- [License](#license)
+  - [Code Contributors](#code-contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
