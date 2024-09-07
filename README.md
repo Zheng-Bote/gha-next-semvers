@@ -35,9 +35,9 @@ Github Action and Workflow to get previous tag / version and next (SemVer) versi
     -   [Inputs](#inputs)
     -   [Outputs](#outputs)
     -   [Outputs](#outputs-1)
-    -   [folder structure](#folder-structure)
-    -   [License](#license)
-        -   [Code Contributors](#code-contributors)
+-   [folder structure](#folder-structure)
+-   [License](#license)
+    -   [Code Contributors](#code-contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -63,7 +63,7 @@ Github Action and Workflow to get previous tag / version and next (SemVer) versi
 
 [![Repo - create Repo-Tree in README.md](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo-create_tree_readme.yml/badge.svg)](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo-create_tree_readme.yml)
 [![Repo - add Actions In/Out to README](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo-actions_docu.yml/badge.svg)](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo-actions_docu.yml)
-[![Repo - create TOC of README](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo-create_doctoc.yml/badge.svg)](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo-create_doctoc.yml)
+[![Repo - create TOC](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo-create_toc.yml/badge.svg)](https://github.com/Zheng-Bote/gha-next-semvers/actions/workflows/repo-create_toc.yml)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
