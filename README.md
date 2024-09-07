@@ -19,24 +19,25 @@ Github Action and Workflow to get previous tag / version and next (SemVer) versi
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
-  - [Description](#description)
-  - [Status](#status)
-  - [Options](#options)
-    - [version](#version)
-    - [strict](#strict)
-  - [Output](#output)
-  - [Examples](#examples)
-    - [Example 1](#example-1)
-    - [Example 2](#example-2)
-- [Parameters](#parameters)
-  - [Inputs](#inputs)
-  - [Outputs](#outputs)
-  - [Outputs](#outputs-1)
-  - [folder structure](#folder-structure)
-  - [License](#license)
-    - [Code Contributors](#code-contributors)
+-   [Description](#description)
+-   [Status](#status)
+-   [Options](#options)
+    -   [version](#version)
+    -   [strict](#strict)
+-   [Output](#output)
+-   [Examples](#examples)
+    -   [Example 1](#example-1)
+    -   [Example 2](#example-2)
+-   [Parameters](#parameters)
+    -   [Inputs](#inputs)
+    -   [Outputs](#outputs)
+    -   [Outputs](#outputs-1)
+    -   [folder structure](#folder-structure)
+    -   [License](#license)
+        -   [Code Contributors](#code-contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -183,43 +184,14 @@ jobs:
 
 ## Inputs
 
-<<<<<<< HEAD
-
 ## Outputs
-
-=======
-
-<!-- AUTO-DOC-INPUT:START - Do not remove or modify this section -->
-
-| INPUT                                                 | TYPE   | REQUIRED | DEFAULT  | DESCRIPTION                                                                                                          |
-| ----------------------------------------------------- | ------ | -------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
-| <a name="input_strict"></a>[strict](#input_strict)    | string | false    | `"true"` | Strict version validation, when turned <br>off, the version is suffixed <br>with `.0` until it contains <br>3 x `.`. |
-| <a name="input_version"></a>[version](#input_version) | string | true     |          | A SemVer version                                                                                                     |
-
-<!-- AUTO-DOC-INPUT:END --> -->
-
-## Outputs
-
-<!-- AUTO-DOC-OUTPUT:START - Do not remove or modify this section -->
-
-| OUTPUT                                                  | TYPE   | DESCRIPTION                          |
-| ------------------------------------------------------- | ------ | ------------------------------------ |
-| <a name="output_major"></a>[major](#output_major)       | string | Next Major Version                   |
-| <a name="output_minor"></a>[minor](#output_minor)       | string | Next Minor Version                   |
-| <a name="output_patch"></a>[patch](#output_patch)       | string | Next Patch Version                   |
-| <a name="output_v_major"></a>[v_major](#output_v_major) | string | Next Major Version (prefixed with v) |
-| <a name="output_v_minor"></a>[v_minor](#output_v_minor) | string | Next Minor Version (prefixed with v) |
-| <a name="output_v_patch"></a>[v_patch](#output_v_patch) | string | Next Patch Version (prefixed with v) |
-
-<!-- AUTO-DOC-OUTPUT:END --> -->
-
-> > > > > > > bd72d347907ef98696284f4df79e763282975569
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-# folder structure
+# Folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .editorconfig
@@ -268,6 +240,7 @@ jobs:
 
 5 directories, 38 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
