@@ -7,7 +7,7 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![WyriHaximus](https://img.shields.io/badge/fork_from-WyriHaximus-black?logo=github)](https://github.com/WyriHaximus/github-action-next-semvers)
 
-![GitHub Created At](https://img.shields.io/github/created-at/Zheng-Bote/repo-template)
+![GitHub Created At](https://img.shields.io/github/created-at/Zheng-Bote/gha-next-semvers)
 
 </div>
 
