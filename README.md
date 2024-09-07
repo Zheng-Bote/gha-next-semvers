@@ -175,15 +175,16 @@ jobs:
 
 <!-- only for actions repo -->
 
-## Inputs -->
+## Inputs
 
-## Outputs -->
+## Outputs
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .editorconfig
@@ -232,6 +233,7 @@ jobs:
 
 5 directories, 38 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -267,7 +269,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 ![Contributors](https://img.shields.io/github/contributors/Zheng-Bote/gha-next-semvers?color=dark-green)
 
-[![Zheng Robert](https://img.shields.io/badge/Github-Zheng_Robert-black?logo=github)](https://www.github.com/Zheng-Bote)[Zheng-Bote](https://www.github.com/Zheng-Bote)
+[![Zheng Robert](https://img.shields.io/badge/Github-Zheng_Robert-black?logo=github)](https://www.github.com/Zheng-Bote)
 
 <hr>
 
